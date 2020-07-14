@@ -141,7 +141,7 @@ namespace EmoteRain
                 cloneTimer = ps_Prefab_Pair.Item1[emote.Id];
             }
 
-            cloneTimer.Emit(count);
+            cloneTimer.Emit(count * Settings.emoteMultiply);
 
             //Log("ParticleSystems notified! ");
 

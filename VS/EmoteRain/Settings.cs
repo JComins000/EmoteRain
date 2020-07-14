@@ -128,6 +128,23 @@ namespace EmoteRain
             }
         }
         private static float? _emoteFallspeed;
+        
+        [UIValue("emote-multiply")]
+        public static int emoteMultiply {
+            get {
+                if(_emoteMultiply == null) {
+                    _emoteMultiply = Plugin.config.GetInt("Settings", "EmoteMultiply", 1, true);
+                }
+                return _emoteMultiply.Value;
+            }
+            set {
+                if(value != _emoteMultiply.Value) {
+                    Plugin.config.SetInt("Settings", "EmoteMultiply", value);
+                    _emoteMultiply = value;
+                }
+            }
+        }
+        private static int? _emoteMultiply;
 
         //This is just here if the prefix should be customizeable later on
         //Or in other words: Doesn't do anything right now
